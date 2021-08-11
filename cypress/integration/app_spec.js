@@ -22,7 +22,10 @@ describe('Sign Up', () => {
     cy.get('input[type="submit"]')
       .click()
 
+    cy.get('li', { timeout: 5000 }).should('be.visible'); 
+
     cy.get('li')
+      .last()
       .should('contain', 'Some Name - some@email.com - core - git-it')
   })
 })
